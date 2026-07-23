@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Mendaftarkan font agar bisa dipakai lewat class 'font-sans' dan 'font-display' */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+
+  /* Mendaftarkan warna hijau emerald khas Padukuhan Mertelu Wetan */
+  --color-emerald-dark: #1A3C34;
+}
