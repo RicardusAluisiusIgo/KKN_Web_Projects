@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero.JPG"
+          src={`${import.meta.env.BASE_URL}images/hero.JPG`}
           alt="Pemandangan Alam Perbukitan Padukuhan Mertelu Wetan"
           className="w-full h-full object-cover object-center scale-105 transform transition-transform duration-10000 ease-out"
         />

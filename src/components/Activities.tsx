@@ -201,7 +201,7 @@ export default function Activities() {
                                 {/* Gambar Lanskap Estetik */}
                                 <div className="w-full h-48 overflow-hidden bg-slate-100 relative">
                                     <img
-                                        src={item.imageUrl}
+                                        src={item.imageUrl.startsWith('http') ? item.imageUrl : `${import.meta.env.BASE_URL}${item.imageUrl.startsWith('/') ? item.imageUrl.slice(1) : item.imageUrl}`}
                                         alt={item.imageAlt}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                                         loading="lazy"
@@ -258,7 +258,7 @@ export default function Activities() {
                                 {/* Gambar Kartu */}
                                 <div className="w-full h-48 overflow-hidden bg-slate-100 relative">
                                     <img
-                                        src={item.imageUrl}
+                                        src={item.imageUrl.startsWith('http') ? item.imageUrl : `${import.meta.env.BASE_URL}${item.imageUrl.startsWith('/') ? item.imageUrl.slice(1) : item.imageUrl}`}
                                         alt={item.imageAlt}
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                                         loading="lazy"
@@ -327,7 +327,7 @@ export default function Activities() {
                                     className={`absolute w-64 sm:w-80 md:w-[420px] aspect-[4/3] rounded-2xl overflow-hidden transition-all duration-500 ease-out cursor-pointer select-none bg-slate-200 ${positionClasses}`}
                                 >
                                     <img
-                                        src={item.imageUrl}
+                                        src={item.imageUrl.startsWith('http') ? item.imageUrl : `${import.meta.env.BASE_URL}${item.imageUrl.startsWith('/') ? item.imageUrl.slice(1) : item.imageUrl}`}
                                         alt={item.imageAlt}
                                         className="w-full h-full object-cover rounded-2xl"
                                         loading="lazy"

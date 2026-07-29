@@ -119,7 +119,7 @@ export const Umkm: React.FC = () => {
                                 {/* Foto Kartu (Diperkecil) */}
                                 <div className="w-full h-32 overflow-hidden bg-slate-100 relative">
                                     <img
-                                        src={item.imageUrl}
+                                        src={item.imageUrl.startsWith('http') ? item.imageUrl : `${import.meta.env.BASE_URL}${item.imageUrl.startsWith('/') ? item.imageUrl.slice(1) : item.imageUrl}`}
                                         alt={item.imageAlt}
                                         className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                                         loading="lazy"
@@ -216,7 +216,7 @@ export const Umkm: React.FC = () => {
                     <div className="max-w-3xl mx-auto bg-slate-50 border border-slate-200 rounded-2xl md:rounded-3xl p-3 sm:p-4 shadow-xs overflow-hidden">
                         <div className="w-full rounded-xl bg-white border border-slate-100 shadow-inner flex items-center justify-center overflow-hidden">
                             <img
-                                src="/images/peta-fix.jpeg"
+                                src={`${import.meta.env.BASE_URL}images/peta-fix.jpeg`}
                                 alt="Peta Persebaran UMKM dan Ternak Padukuhan Mertelu Wetan"
                                 className="w-full h-auto max-h-[480px] object-contain block select-none"
                             />
@@ -259,7 +259,7 @@ export const Umkm: React.FC = () => {
                         </div>
                         <div className="w-full bg-slate-50 rounded-xl overflow-auto min-h-[400px] max-h-[80vh] relative flex items-center justify-center p-2 border border-slate-200">
                             <img
-                                src="/images/peta-fix.jpeg"
+                                src={`${import.meta.env.BASE_URL}images/peta-fix.jpeg`}
                                 alt="Peta Persebaran UMKM dan Ternak Padukuhan Mertelu Wetan - Resolusi Tinggi"
                                 className="w-full h-auto object-contain block select-none"
                             />

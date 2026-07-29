@@ -58,7 +58,7 @@ export const Potential: React.FC = () => {
                             {/* Image Container dengan Efek Hover Zoom */}
                             <div className="w-full h-48 sm:h-52 overflow-hidden bg-slate-100 relative">
                                 <img
-                                    src={item.imageUrl}
+                                    src={item.imageUrl.startsWith('http') ? item.imageUrl : `${import.meta.env.BASE_URL}${item.imageUrl.startsWith('/') ? item.imageUrl.slice(1) : item.imageUrl}`}
                                     alt={item.imageAlt}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                                     loading="lazy"
