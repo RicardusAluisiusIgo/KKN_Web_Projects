@@ -14,7 +14,7 @@ export const Potential: React.FC = () => {
             id: 'pertanian',
             title: 'Pertanian & Agrobisnis',
             description: 'Mayoritas warga Mertelu Wetan bermata pencaharian sebagai petani. Lahan pertanian di sini sangat subur dan menjadi pusat komoditas unggulan seperti melon, padi, semangka, cabai, timun, hingga aneka sayur-sayuran.',
-            imageUrl: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600&q=80', // Foto pertanian/sawah subur
+            imageUrl: '/images/sawah.jpeg', // Foto pertanian/sawah subur
             imageAlt: 'Lahan pertanian subur di Mertelu Wetan'
         },
         {
@@ -28,7 +28,7 @@ export const Potential: React.FC = () => {
             id: 'peternakan',
             title: 'Sektor Peternakan',
             description: 'Hampir seluruh warga di padukuhan memiliki hewan ternak sendiri. Sektor ini menjadikan Mertelu Wetan sebagai salah satu daerah potensial penghasil hewan ternak sapi dan kambing berkualitas.',
-            imageUrl: 'https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=600&q=80', // Foto hewan ternak sapi/kambing yang bersih
+            imageUrl: '/images/sapi.jpeg', // Foto hewan ternak sapi/kambing yang bersih
             imageAlt: 'Peternakan sapi dan kambing warga'
         }
     ];

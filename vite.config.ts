@@ -7,4 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/KKN_Web_Projects/',
 })

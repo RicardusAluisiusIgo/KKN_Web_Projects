@@ -26,7 +26,7 @@ const umkmData: UmkmItem[] = [
         contactPhone: '082134825960',
         contactSocial: '@PnDCustomBox',
         imageUrl:
-            'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80',
+            '/images/tempat-pnd.png',
         imageAlt: 'PnD Custom Box Kerajinan Kayu',
         buttonText: 'HUBUNGI PENGRAJIN',
         buttonType: 'primary',
@@ -34,51 +34,59 @@ const umkmData: UmkmItem[] = [
     },
     {
         id: 'toko-kelontong-1',
-        badgeText: 'WILAYAH: RT 01',
+        badgeText: 'WILAYAH: RT 05',
         badgeType: 'region',
         title: 'Toko Kelontong 1',
+        description:
+            'Menyediakan berbagai macam kebutuhan pokok sehari-hari, sembako mentah, kebutuhan dapur, hingga aneka jajanan konsumsi warga di wilayah RT 05.',
         imageUrl:
             '/images/kelontong1.jpeg',
         imageAlt: 'Toko Kelontong 1',
         buttonText: '📍 BUKA GOOGLE MAPS',
         buttonType: 'outline',
-        buttonUrl: 'https://maps.google.com',
+        buttonUrl: 'https://maps.app.goo.gl/nCKNGNLTFJ9asAGa6',
     },
     {
         id: 'toko-kelontong-2',
         badgeText: 'WILAYAH: RT 02',
         badgeType: 'region',
         title: 'Toko Kelontong 2',
+        description:
+            'Warung belanja harian keluarga yang melayani pemenuhan kebutuhan sembako harian, pulsa/token listrik, serta perlengkapan rumah tangga umum di RT 02.',
         imageUrl:
             '/images/kelontong2.png',
         imageAlt: 'Toko Kelontong 2',
         buttonText: '📍 BUKA GOOGLE MAPS',
         buttonType: 'outline',
-        buttonUrl: 'https://maps.google.com',
+        buttonUrl: 'https://maps.app.goo.gl/nCKNGNLTFJ9asAGa6',
     },
     {
         id: 'toko-kelontong-3',
-        badgeText: 'WILAYAH: RT 03',
+        badgeText: 'WILAYAH: RT 04',
         badgeType: 'region',
         title: 'Toko Kelontong 3',
+        description:
+            'Pusat belanja kebutuhan pokok lokal yang lengkap dan strategis, menyediakan bahan pangan berkualitas serta perlengkapan harian warga RT 04.',
         imageUrl:
             '/images/kelontong3.png',
         imageAlt: 'Toko Kelontong 3',
-        buttonText: '📍 BUKA GOOGLE MAPS',
-        buttonType: 'outline',
-        buttonUrl: 'https://maps.google.com',
+        buttonText: 'HUBUNGI PAK GUNAWAN (OWNER)',
+        buttonType: 'primary',
+        buttonUrl: 'https://wa.me/6282137174250',
     },
     {
         id: 'bengkel-motor',
-        badgeText: 'WILAYAH: RT 04',
+        badgeText: 'WILAYAH: RT 05',
         badgeType: 'region',
         title: 'Bengkel Motor',
+        description:
+            'Melayani jasa perawatan berkala sepeda motor, ganti oli, tambal ban, tune-up, serta penyediaan suku cadang (sparepart) harian untuk kendaraan warga.',
         imageUrl:
             '/images/bengkel.png',
         imageAlt: 'Bengkel Motor',
         buttonText: '📍 BUKA GOOGLE MAPS',
         buttonType: 'outline',
-        buttonUrl: 'https://maps.google.com',
+        buttonUrl: 'https://maps.app.goo.gl/S8q6TBEpb75zw7G36',
     },
 ];
 
@@ -107,7 +115,7 @@ export const Umkm: React.FC = () => {
                             key={item.id}
                             className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-emerald-dark/30 transition-all duration-300 flex flex-col justify-between h-full min-h-[360px]"
                         >
-                            <div className="flex flex-col flex-1">
+                            <div className="flex flex-col flex-1 justify-between">
                                 {/* Foto Kartu (Diperkecil) */}
                                 <div className="w-full h-32 overflow-hidden bg-slate-100 relative">
                                     <img
@@ -140,7 +148,7 @@ export const Umkm: React.FC = () => {
 
                                         {/* Deskripsi (Diperkecil & Dibatasi Baris) */}
                                         {item.description && (
-                                            <p className="font-sans text-xs text-slate-600 leading-relaxed font-normal mb-2.5 line-clamp-2">
+                                            <p className="font-sans text-xs text-slate-600 leading-relaxed font-normal mb-2.5 line-clamp-3">
                                                 {item.description}
                                             </p>
                                         )}

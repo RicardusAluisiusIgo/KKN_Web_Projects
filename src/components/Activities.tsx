@@ -37,22 +37,22 @@ const activitiesData: ActivityItem[] = [
     {
         id: 'lembaga-dusun',
         title: 'Pertemuan Lembaga Dusun',
-        description: 'Forum diskusi perangkat padukuhan dalam merancang kebijakan lokal.',
-        imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
+        description: 'Forum diskusi perangkat padukuhan dengan kalurahan dalam merancang program lokal.',
+        imageUrl: '/images/kalurahan.jpeg',
         imageAlt: 'Pertemuan Lembaga Dusun',
     },
     {
         id: 'tradisi-tarup',
         title: 'Tradisi Tarup',
         description: 'Kegiatan gotong royong mendirikan tenda hajatan sebagai simbol kebersamaan.',
-        imageUrl: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80',
+        imageUrl: '/images/tarup.png',
         imageAlt: 'Tradisi Tarup',
     },
     {
         id: 'tradisi-terbang',
         title: 'Tradisi Terbang',
         description: 'Seni musik religi tradisional yang dilestarikan secara turun-temurun oleh warga.',
-        imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80',
+        imageUrl: '/images/terbang.png',
         imageAlt: 'Tradisi Terbang',
     },
 ];
@@ -63,7 +63,7 @@ const groupProkerData: GroupProkerItem[] = [
         id: 'reflektor-jalan',
         title: 'Pemasangan Reflektor Jalan',
         description: 'Peningkatan keamanan jalan desa melalui pemasangan marka reflektor.',
-        imageUrl: '/images/reflektor-jalan.jpeg',
+        imageUrl: '/images/reflektor.jpeg',
         imageAlt: 'Pemasangan Reflektor Jalan',
     },
     {
@@ -90,7 +90,7 @@ const groupProkerData: GroupProkerItem[] = [
     {
         id: 'dokumentasi-tarup',
         title: 'Dokumentasi Tradisi Tarup',
-        imageUrl: '/images/isa.jpeg',
+        imageUrl: '/images/dokum.png',
         imageAlt: 'Dokumentasi Tradisi Tarup',
         isVideoCard: true,
     },
@@ -137,14 +137,14 @@ const individualProkerData: IndividualProkerItem[] = [
         id: 'digitalisasi-visualisasi',
         title: 'Digitalisasi & Visualisasi Data',
         author: 'Joycelyn – Informatika',
-        imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=80',
+        imageUrl: '/images/visualisasi_data.png',
         imageAlt: 'Digitalisasi & Visualisasi Data',
     },
     {
         id: 'website-profil',
         title: 'Website Profil Padukuhan',
         author: 'Ricardus Aluisius Igo – Informatika',
-        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80',
+        imageUrl: '/images/web_saya.png',
         imageAlt: 'Website Profil Padukuhan',
     },
     {
@@ -165,12 +165,15 @@ const individualProkerData: IndividualProkerItem[] = [
         id: 'peta-tata-letak',
         title: 'Peta Tata Letak Ternak & UMKM',
         author: 'Lintang Chelsea W. – Arsitektur',
-        imageUrl: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=200&q=80',
+        imageUrl: '/images/peta.png',
         imageAlt: 'Peta Tata Letak Ternak & UMKM',
     },
 ];
 
 export default function Activities() {
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const currentProker = individualProkerData[activeIndex];
+
     return (
         <div className="w-full">
             {/* ================= SEKSI 1: KEGIATAN & AGENDA PADUKUHAN ================= */}
@@ -223,7 +226,7 @@ export default function Activities() {
                 </div>
             </section>
 
-            {/* ================= SEKSI 2: KOLABORASI PROGRAM KERJA KKN UAJY ================= */}
+            {/* ================= SEKSI 2: KOLABORASI PROGRAM KERJA KKN 89 UAJY ================= */}
             <section id="kolaborasi-kkn" className="w-full bg-slate-50 py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-200/60">
                 <div className="max-w-7xl mx-auto">
                     {/* Header Sub-Seksi */}
@@ -271,7 +274,7 @@ export default function Activities() {
                                         </h3>
                                         {item.isVideoCard ? (
                                             <a
-                                                href="https://youtube.com"
+                                                href="https://youtu.be/-XmS0f3HEhI"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center justify-center gap-2 text-white bg-emerald-dark rounded-xl py-2 px-4 text-xs font-bold w-full text-center mt-3 hover:bg-emerald-dark/90 transition-colors duration-200 shadow-xs"
@@ -298,32 +301,85 @@ export default function Activities() {
                         <div className="flex-1 h-px bg-slate-200" />
                     </div>
 
-                    {/* Grid Proker Individu (9 Kartu Kompak - 3 Kolom Desktop) */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {individualProkerData.map((item) => (
-                            <div
-                                key={item.id}
-                                className="p-4 bg-white border border-slate-200 rounded-xl flex items-center gap-4 hover:shadow-sm hover:border-emerald-dark/20 transition-all duration-200"
-                            >
-                                <img
-                                    src={item.imageUrl}
-                                    alt={item.imageAlt}
-                                    className="w-16 h-16 rounded-lg overflow-hidden object-cover flex-shrink-0 bg-slate-100"
-                                    loading="lazy"
-                                />
-                                <div className="flex-1 min-w-0">
-                                    <h4 className="font-display text-sm font-bold text-slate-800 truncate">
-                                        {item.title}
-                                    </h4>
-                                    <p className="font-sans text-xs text-slate-500 mt-0.5 truncate">
-                                        {item.author}
-                                    </p>
+                    {/* Area Slider/Carousel 3D Coverflow */}
+                    <div className="relative w-full h-64 sm:h-80 md:h-96 flex items-center justify-center overflow-hidden my-4">
+                        {individualProkerData.map((item, index) => {
+                            const total = individualProkerData.length;
+                            let offset = index - activeIndex;
+
+                            if (offset > total / 2) offset -= total;
+                            if (offset < -total / 2) offset += total;
+
+                            let positionClasses = "opacity-0 pointer-events-none hidden";
+
+                            if (offset === 0) {
+                                positionClasses = "scale-100 opacity-100 z-30 shadow-2xl border-2 border-white/80 translate-x-0 pointer-events-auto";
+                            } else if (offset === -1) {
+                                positionClasses = "scale-75 sm:scale-80 opacity-40 sm:opacity-50 z-20 shadow-lg -translate-x-[55%] sm:-translate-x-[65%] md:-translate-x-[75%] pointer-events-auto";
+                            } else if (offset === 1) {
+                                positionClasses = "scale-75 sm:scale-80 opacity-40 sm:opacity-50 z-20 shadow-lg translate-x-[55%] sm:translate-x-[65%] md:translate-x-[75%] pointer-events-auto";
+                            }
+
+                            return (
+                                <div
+                                    key={item.id}
+                                    onClick={() => setActiveIndex(index)}
+                                    className={`absolute w-64 sm:w-80 md:w-[420px] aspect-[4/3] rounded-2xl overflow-hidden transition-all duration-500 ease-out cursor-pointer select-none bg-slate-200 ${positionClasses}`}
+                                >
+                                    <img
+                                        src={item.imageUrl}
+                                        alt={item.imageAlt}
+                                        className="w-full h-full object-cover rounded-2xl"
+                                        loading="lazy"
+                                    />
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
+                    </div>
+
+                    {/* Informasi Teks Dinamis di Bawah Slider */}
+                    {currentProker && (
+                        <div className="text-center mt-6 min-h-[72px] flex flex-col items-center justify-center px-4 transition-all duration-300">
+                            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight italic">
+                                {currentProker.title}
+                            </h3>
+                            <p className="font-sans text-sm sm:text-base text-slate-500 mt-1 font-medium">
+                                {currentProker.author}
+                            </p>
+                        </div>
+                    )}
+
+                    {/* Navigasi Kontrol (Oval Arrows & Counter) */}
+                    <div className="flex items-center justify-center mt-6">
+                        <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full border border-slate-200 bg-white/80 backdrop-blur-xs shadow-xs text-xs sm:text-sm font-sans text-slate-600">
+                            <button
+                                onClick={() => setActiveIndex((prev) => (prev - 1 + individualProkerData.length) % individualProkerData.length)}
+                                className="p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+                                aria-label="Previous Proker"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            <span className="font-medium tracking-wide text-slate-500 min-w-[50px] text-center select-none">
+                                {activeIndex + 1} / {individualProkerData.length}
+                            </span>
+
+                            <button
+                                onClick={() => setActiveIndex((prev) => (prev + 1) % individualProkerData.length)}
+                                className="p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+                                aria-label="Next Proker"
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     );
 }
+
